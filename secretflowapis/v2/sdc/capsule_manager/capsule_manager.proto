@@ -129,6 +129,7 @@ message Rule {
   // RFC4648 BASE32(SHA256(DER(X.509 public key)))
   repeated string grantee_party_ids = 2 [ json_name = "grantee_party_ids" ];
 
+  
   // Behavior of operating on this resource
   //
   // Note: If ops is empty, no operation is allowed
@@ -151,6 +152,8 @@ message Rule {
   // Note: 如果 constraints 为空，表示没有额外限制，多条 constraints 之间是 and
   // 语义
   repeated string global_constraints = 5 [ json_name = "global_constraints" ];
+
+  int32 limit_times = 6 [ json_name = "limit_times" ];
 }
 
 message CreateResultDataKeyRequest {
